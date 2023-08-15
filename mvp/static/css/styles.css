@@ -1,0 +1,143 @@
+/* styles.css */
+
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background-color: #2d3e50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.navbar {
+    background-color: #2d3e50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer {
+    background-color: #2d3e50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f8f8f8;
+}
+
+button {
+    background-color: #2d3e50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #1a2938;
+}
+
+a {
+    color: #2d3e50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.condition-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.condition-card {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.condition-card:hover {
+    transform: translateY(-5px);
+}
+
+.condition-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.condition-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.condition-link {
+    background-color: #2d3e50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.condition-link:hover {
+    background-color: #1a2938;
+}

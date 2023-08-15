@@ -1,0 +1,33 @@
+{%  extends 'ai/base.html' %}
+{% load static %}
+
+{% block prediction-form %}
+    <form class="prediction-form" action="{% url 'ai:hiv' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+{#    <label for="age">Age:</label>#}
+{#    <input type="number" id="age" name="age" required><br><br>#}
+{##}
+{#    <label for="gender">Gender:</label>#}
+{#    <select id="gender" name="gender" required>#}
+{#      <option value="0">Female</option>#}
+{#      <option value="1">Male</option>#}
+{#    </select><br><br>#}
+{##}
+{#    <label for="care_linked">% Linked to Care within 3 Months:</label>#}
+{#    <input type="number" id="care_linked" name="care_linked" required><br><br>#}
+{##}
+{#    <label for="plwdhi_prevalence">PLWDHI Prevalence:</label>#}
+{#    <input type="number" id="plwdhi_prevalence" name="plwdhi_prevalence" required><br><br>#}
+{##}
+{#    <label for="HIV_diagnoses">HIV Diagnoses:</label>#}
+{#    <input type="number" id="HIV_diagnoses" name="HIV_diagnoses" required><br><br>#}
+    <div id="prediction-result" >
+        <h2>Prediction Result:{{ result }}</h2>
+        <p id="prediction-text"></p>
+    </div>
+    <button type="submit" id="predict-button">Predict</button>
+    <a href="{% url 'index' %}" class="btn btn-primary">Go to Main Page</a>
+  </form>
+{% endblock %}
+

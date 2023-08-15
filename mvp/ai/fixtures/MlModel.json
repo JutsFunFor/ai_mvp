@@ -1,0 +1,32 @@
+[
+  {
+    "model": "ai.mlmodel",
+    "pk": 1,
+    "fields": {
+      "header": "Heart Failure Prediction",
+      "text": "Predict the likelihood of heart failure based on age, sex, chest pain type, and cholesterol level.",
+      "href": "/heart/",
+      "link": "Predict Heart Condition"
+    }
+  },
+  {
+    "model": "ai.mlmodel",
+    "pk": 2,
+    "fields": {
+      "header": "Lung Cancer Prediction",
+      "text": "Predict the possibility of lung cancer based on various factors including age and smoking.",
+      "href": "/lung/",
+      "link": "Predict Lung Condition"
+    }
+  },
+  {
+    "model": "ai.mlmodel",
+    "pk": 3,
+    "fields": {
+      "header": "HIV/AIDS Prediction",
+      "text": "Predict the HIV diagnosis rate based on age, gender, and other related factors.",
+      "href": "/hiv/",
+      "link": "Predict HIV/AIDS"
+    }
+  }
+]

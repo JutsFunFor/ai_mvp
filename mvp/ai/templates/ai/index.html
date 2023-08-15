@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href={% static 'css/styles.css' %}>
+</head>
+<body>
+<div class="container">
+  <h1>{{ greetings }}</h1>
+  <p>This app provides predictions for various health conditions based on scientific research and data.</p>
+  <div class="condition-list">
+      {% for card in cards %}
+          <div class="condition-card">
+             <h2>{{ card.header }}</h2>
+             <p>{{ card.text }}</p>
+             <a href='{{ card.href }}' class="condition-link">{{ card.link }}</a>
+          </div>
+      {% endfor %}
+  </div>
+</div>
+
+</body>
+</html>

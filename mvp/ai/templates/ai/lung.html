@@ -1,0 +1,55 @@
+{% extends "ai/base.html" %}
+{% load static %}
+<!DOCTYPE html>
+
+{% block prediction-form %}
+    <form class="prediction-form" action="{% url 'ai:lung_cancer' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+{#        <label for="age">Age:</label>#}
+{#        <input type="number" id="age" name="age" required><br><br>#}
+{##}
+{#        <label for="wheezing">Wheezing:</label>#}
+{#        <select id="wheezing" name="wheezing" required>#}
+{#            <option value="0">No</option>#}
+{#            <option value="1">Yes</option>#}
+{#        </select><br><br>#}
+{##}
+{#        <label for="fatigue">Fatigue:</label>#}
+{#        <select id="fatigue" name="fatigue" required>#}
+{#            <option value="0">No</option>#}
+{#            <option value="1">Yes</option>#}
+{#        </select><br><br>#}
+{##}
+{#        <label for="coughing">Coughing:</label>#}
+{#        <select id="coughing" name="coughing" required>#}
+{#            <option value="0">No</option>#}
+{#            <option value="1">Yes</option>#}
+{#        </select><br><br>#}
+{##}
+{#        <label for="shortness">Shortness of Breath:</label>#}
+{#        <select id="shortness" name="shortness" required>#}
+{#            <option value="0">No</option>#}
+{#            <option value="1">Yes</option>#}
+{#        </select><br><br>#}
+{##}
+{#        <label for="smoking">Smoking:</label>#}
+{#        <select id="smoking" name="smoking" required>#}
+{#            <option value="0">No</option>#}
+{#            <option value="1">Yes</option>#}
+{#        </select><br><br>#}
+{##}
+{#        <label for="swallowing">Swallowing Difficulty:</label>#}
+{#        <select id="swallowing" name="swallowing" required>#}
+{#            <option value="0">No</option>#}
+{#            <option value="1">Yes</option>#}
+{#        </select><br><br>#}
+        <div id="prediction-result" >
+            <h2>Prediction Result:{{ result }}</h2>
+            <p id="prediction-text"></p>
+        </div>
+    <button type="submit" id="predict-button">Predict</button>
+    <a href="{% url 'index' %}" class="btn btn-primary">Go to Main Page</a>
+    </form>
+{% endblock %}
+
