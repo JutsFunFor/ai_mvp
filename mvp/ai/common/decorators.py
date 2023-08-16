@@ -1,11 +1,10 @@
 from functools import wraps
-
 import joblib
 import pandas as pd
 from django.shortcuts import render
 
 
-def handle_form_valid(model_path, scaler_path, ohe_features_path):
+def handle_form_valid(model_path, ohe_features_path):
     def decorator(view_func):
         @wraps(view_func)
         def wrapped_view(request, *args, **kwargs):
