@@ -12,7 +12,6 @@ def handle_form_valid(model_path, scaler_path, ohe_features_path):
             form = args[0]
             try:
                 model = joblib.load(model_path)
-                scaler = joblib.load(scaler_path)
                 ohe_features = joblib.load(ohe_features_path)
 
                 X_test = pd.DataFrame(form.cleaned_data, index=[0])
@@ -21,7 +20,6 @@ def handle_form_valid(model_path, scaler_path, ohe_features_path):
                 X_test = X_test.reindex(columns=ohe_features, fill_value=False)
                 X_test = X_test.applymap(lambda x: isinstance(x, str) or x)
 
-                X_test = scaler.transform(X_test)
                 result = model.predict(X_test)[0]
 
                 form.instance.result = result
@@ -31,7 +29,7 @@ def handle_form_valid(model_path, scaler_path, ohe_features_path):
                 context = {'error_message': err}
                 return render(request, 'ai/error.html', context)
 
-            context = {"form": form, "result": result}
+            context = {"form": form, "result": f'{result:.2f}'}
             return view_func(request, *args, context, **kwargs)
 
         return wrapped_view
