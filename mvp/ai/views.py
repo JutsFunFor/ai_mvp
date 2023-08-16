@@ -39,6 +39,6 @@ class HivPredView(PredictionBaseView):
     scaler_path = 'pkl/hiv_scaler.pkl'
     ohe_features_path = 'pkl/hiv_features.pkl'
 
-    @handle_form_valid(model_path, scaler_path, ohe_features_path)
+    @handle_form_valid(model_path, ohe_features_path)
     def form_valid(self, form, context):
         return render(self.request, self.template_name, context)
