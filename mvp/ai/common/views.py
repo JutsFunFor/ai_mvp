@@ -28,6 +28,7 @@ class PredictionBaseView(CommonMixin, FormView):
             X_test = scaler.transform(X_test)
             result = model.predict(X_test)[0]
 
+            res_line = ' YES (1)' if result else ' NO (0)'
             form.instance.result = result
             form.save()
 
@@ -35,5 +36,5 @@ class PredictionBaseView(CommonMixin, FormView):
             context = {'error_message': err}
             return render(self.request, 'ai/error.html', context)
 
-        context = {"form": form, "result": result}
+        context = {"form": form, "result": res_line}
         return render(self.request, self.template_name, context)
