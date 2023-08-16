@@ -10,9 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import environ
-
 from pathlib import Path
+
+import environ
 
 env = environ.Env(
     DEBUG=bool,
@@ -122,8 +122,11 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
 
+if DEBUG:
+    STATICFILES_DIRS = (BASE_DIR / 'static',)
+else:
+    STATIC_ROOT = BASE_DIR / 'static'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
